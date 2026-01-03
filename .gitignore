@@ -16,3 +16,4 @@ sales_data_pipeline/rejected/
 dist/
 build/
 *.egg-info
+secrets.json
