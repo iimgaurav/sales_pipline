@@ -1,0 +1,64 @@
+name: CD - Deploy to SSH host
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install rsync
+        run: sudo apt-get update && sudo apt-get install -y rsync
+
+      - name: Copy files to remote host (using private key)
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+          DEPLOY_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+        run: |
+          echo "Uploading files to $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH"
+          mkdir -p tmp_deploy
+          rsync -av --exclude='.git' --exclude='logs' --exclude='sales_data_pipeline/failed_load' . tmp_deploy/
+          # write private key to a temp file and use it for rsync
+          KEYFILE=$(mktemp)
+          echo "$DEPLOY_PRIVATE_KEY" > $KEYFILE
+          chmod 600 $KEYFILE
+          rsync -av -e "ssh -o StrictHostKeyChecking=no -i $KEYFILE -p ${DEPLOY_PORT:-22}" tmp_deploy/ ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}
+          rm -f $KEYFILE
+
+      - name: Remote: create venv and install
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+          DEPLOY_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+        run: |
+          # run remote commands over ssh using the private key
+          KEYFILE=$(mktemp)
+          echo "$DEPLOY_PRIVATE_KEY" > $KEYFILE
+          chmod 600 $KEYFILE
+          ssh -o StrictHostKeyChecking=no -i $KEYFILE -p ${DEPLOY_PORT:-22} ${DEPLOY_USER}@${DEPLOY_HOST} <<'SSH'
+            set -e
+            mkdir -p "${DEPLOY_PATH}"
+            cd "${DEPLOY_PATH}"
+            python3 -m venv .venv || true
+            . .venv/bin/activate
+            pip install --upgrade pip
+            pip install -r requirements.txt || true
+            nohup .venv/bin/python src/main.py > pipeline_run.log 2>&1 &
+            exit
+SSH
+          rm -f $KEYFILE

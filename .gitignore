@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.env
+.venv/
+env/
+.vscode/
+logs/
+sales_data_pipeline/failed_load/
+*.sqlite3
+/.pytest_cache/
