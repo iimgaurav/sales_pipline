@@ -92,7 +92,7 @@ Notes
 
 
 
-📦 Sales Data Pipeline — Production-Grade Python ETL
+📦** Sales Data Pipeline — Production-Grade Python ETL**
 
 Overview
 
@@ -158,8 +158,8 @@ Automated and monitored
                      │
                      └── README.md
 
-Pipeline Flow (Step by Step)
-1. Extract — Raw Ingestion
+**Pipeline Flow (Step by Step)**
+**1. Extract — Raw Ingestion**
 
 Reads CSV data from source
 
@@ -169,7 +169,7 @@ No transformations applied
 
 Why: Raw data must remain unchanged for traceability.
 
-2. Validate — Data Quality Gate
+**2. Validate — Data Quality Gate**
 
 Checks critical columns for nulls
 
@@ -179,7 +179,7 @@ Segregates invalid records into a rejected dataset
 
 Why: Bad data should never reach analytical systems.
 
-3. Transform — Business Logic (Silver Layer)
+**3. Transform — Business Logic (Silver Layer)**
 
 Standardizes text fields (country, status, deal size)
 
@@ -195,7 +195,7 @@ Adds audit metadata
 
 Why: Analytical systems require consistent, enriched data.
 
-4. Load — SQL Server Integration
+**4. Load — SQL Server Integration**
 
 Loads data into staging tables via Python
 
@@ -205,7 +205,7 @@ Enforces duplicate prevention logic
 
 Why: Separation of ingestion and business logic improves reliability.
 
-5. Incremental Load & Idempotency
+**5. Incremental Load & Idempotency**
 
 Each run is tagged with a unique batch_id
 
@@ -254,7 +254,7 @@ Secure secrets managed via GitHub Actions
 
 Security & Configuration
 
-All sensitive values are managed using GitHub Actions Secrets:
+**All sensitive values are managed using GitHub Actions Secrets:**
 
 SQL Access
 
