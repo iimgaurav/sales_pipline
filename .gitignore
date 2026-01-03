@@ -5,6 +5,14 @@ __pycache__/
 env/
 .vscode/
 logs/
+*.log
+sales_data_pipeline/raw/
 sales_data_pipeline/failed_load/
+sales_data_pipeline/processed/
+sales_data_pipeline/rejected/
 *.sqlite3
 /.pytest_cache/
+.DS_Store
+dist/
+build/
+*.egg-info
