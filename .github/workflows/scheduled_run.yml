@@ -2,7 +2,7 @@ name: Scheduled Pipeline Run
 
 on:
   schedule:
-    - cron: '0 2 * * *' # daily at 02:00 UTC
+    - cron: '45 17 * * *' # daily at 02:00 UTC # daily at 17:40 UTC
   workflow_dispatch:
 
 jobs:
