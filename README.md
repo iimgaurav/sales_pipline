@@ -73,7 +73,7 @@ gh secret set SQL_PASSWORD --body "your-db-password"
 ```
 
 
-Deployment (via GitHub Actions)
+**Deployment (via GitHub Actions)**
 
 The repository includes a deploy workflow at `.github/workflows/deploy.yml` which copies files to a remote host over SSH and starts the pipeline in a virtual environment.
 
@@ -92,7 +92,7 @@ Notes
 
 
 
-📦** Sales Data Pipeline — Production-Grade Python ETL**
+**Sales Data Pipeline — Production-Grade Python ETL**
 
 Overview
 
