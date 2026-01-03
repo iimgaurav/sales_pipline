@@ -116,45 +116,47 @@ Rerunnable without creating duplicate data
 
 Automated and monitored
 
-High-Level Architecture
-Raw CSV
-   ↓
-Python ETL (VS Code)
- ├── Extract
- ├── Validate
- ├── Transform
- ├── Load
- ├── Logging & Auditing
-   ↓
-SQL Server
- ├── Staging Tables
- ├── Fact Tables
- └── Incremental Loads
-
-Project Structure
-sales_pipeline/
-│
-├── data/
-│   ├── raw/         # Incoming source files
-│   ├── processed/   # Valid & transformed data
-│   └── rejected/    # Invalid records for audit
-│
-├── logs/             # Pipeline execution logs
-│
-├── src/
-│   ├── extract.py   # Raw data ingestion
-│   ├── validate.py  # Data validation & rejection
-│   ├── transform.py # Business transformations
-│   ├── load.py      # SQL Server loading
-│   └── main.py      # Pipeline orchestration
-│
-├── .github/
-│   └── workflows/
-│       ├── ci.yml
-│       ├── scheduled_run.yml
-│       └── deploy.yml
-│
-└── README.md
+  High-Level Architecture
+  
+  
+                       Raw CSV
+                        ↓
+                     Python ETL (VS Code)
+                      ├── Extract
+                      ├── Validate
+                      ├── Transform
+                      ├── Load
+                      ├── Logging & Auditing
+                        ↓
+                     SQL Server
+                      ├── Staging Tables
+                      ├── Fact Tables
+                      └── Incremental Loads
+                     
+                     Project Structure
+                     sales_pipeline/
+                     │
+                     ├── data/
+                     │   ├── raw/         # Incoming source files
+                     │   ├── processed/   # Valid & transformed data
+                     │   └── rejected/    # Invalid records for audit
+                     │
+                     ├── logs/             # Pipeline execution logs
+                     │
+                     ├── src/
+                     │   ├── extract.py   # Raw data ingestion
+                     │   ├── validate.py  # Data validation & rejection
+                     │   ├── transform.py # Business transformations
+                     │   ├── load.py      # SQL Server loading
+                     │   └── main.py      # Pipeline orchestration
+                     │
+                     ├── .github/
+                     │   └── workflows/
+                     │       ├── ci.yml
+                     │       ├── scheduled_run.yml
+                     │       └── deploy.yml
+                     │
+                     └── README.md
 
 Pipeline Flow (Step by Step)
 1. Extract — Raw Ingestion
