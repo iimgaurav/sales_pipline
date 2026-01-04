@@ -1,12 +1,12 @@
 import pandas as pd
 import logging
-from datetime import datetime, timezone
+from datetime import datetime
 import uuid
 
 
 def generate_batch_id() -> str:
     """Generate unique batch ID for tracking data loads"""
-    return f"SALES_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}"
+    return f"SALES_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}"
 
 
 def transform_sales_data(df: pd.DataFrame) -> pd.DataFrame:
@@ -43,8 +43,11 @@ def transform_sales_data(df: pd.DataFrame) -> pd.DataFrame:
     batch_id = generate_batch_id()
     transformed_df["batch_id"] = batch_id
     
-    # Audit column
-    transformed_df["load_timestamp"] = datetime.now(timezone.utc)
+    # Audit column - store as datetime object without timezone
+    transformed_df["load_timestamp"] = pd.Timestamp.now()
+    
+    # If you have source_file_name column
+    transformed_df["source_file_name"] = "Auto Sales data.csv"
 
     logging.info(
         f"[TRANSFORM] Transformation completed | Batch ID: {batch_id} | Rows: {transformed_df.shape[0]}"
