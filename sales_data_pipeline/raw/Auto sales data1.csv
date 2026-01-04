@@ -1,0 +1,21 @@
+ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,DAYS_SINCE_LASTORDER,STATUS,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,CITY,POSTALCODE,COUNTRY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE
+20101,28,98.45,3,2756.6,14-01-2021,120,Shipped,Motorcycles,95,S10_1678,Velocity Toys Ltd.,4155559021,412 Market Street,San Jose,95113,USA,Lopez,Carlos,Medium
+20102,35,87.2,5,3052,22-01-2021,112,Shipped,Motorcycles,95,S10_1678,Euro Hobby House,+49 30 4555 8123,Kantstrasse 18,Berlin,10623,Germany,Schmidt,Anna,Medium
+20103,42,110.3,1,4632.6,05-02-2021,98,Shipped,Motorcycles,95,S10_1678,Nordic Collectables,+46 8 555 7812,Sveavagen 44,Stockholm,11134,Sweden,Lindberg,Oskar,Large
+20104,19,76.9,4,1461.1,18-02-2021,85,Shipped,Motorcycles,95,S10_1678,City Toy Store,2125554412,19 Broadway,NYC,10007,USA,Chen,Lily,Small
+20105,50,114.84,2,5742,01-03-2021,72,Shipped,Motorcycles,95,S10_1678,Pacific Rim Gifts,+81 3 4455 9981,5-12-7 Ginza,Chuo-ku,104-0061,Japan,Tanaka,Hiroshi,Large
+20106,27,102.15,6,2758.05,15-03-2021,58,Shipped,Motorcycles,95,S10_1678,Outback Collectors,+61 7 3555 2211,88 Queen Street,Brisbane,4000,Australia,Mitchell,Sarah,Medium
+20107,33,90.6,1,2989.8,29-03-2021,44,Shipped,Motorcycles,95,S10_1678,Atlantic Models Inc.,3055556677,742 Ocean Drive,Miami,33139,USA,Rivera,Jose,Medium
+20108,21,84.5,7,1774.5,12-04-2021,31,Shipped,Motorcycles,95,S10_1678,Iberia Gift Shop,+34 91 555 4433,Calle Mayor 52,Madrid,28013,Spain,Rodriguez,Elena,Small
+20109,46,118.25,2,5439.5,26-04-2021,18,Shipped,Motorcycles,95,S10_1678,Renaissance Toys,33 1 4455 9922,14 Rue Lafayette,Paris,75009,France,Dupont,Luc,Large
+20110,38,99.1,4,3765.8,08-05-2021,7,Shipped,Motorcycles,95,S10_1678,Maple Leaf Collectables,4165557819,220 King Street,Toronto,M5H 1K4,Canada,Patel,Rahul,Medium
+20111,25,205.4,3,5135,16-01-2021,118,Shipped,Classic Cars,214,S10_1949,Royal Diecast Ltd.,020 7555 8124,61 Piccadilly,London,W1J 0DY,UK,Bennett,Oliver,Medium
+20112,41,232.75,5,9542.75,30-01-2021,105,Shipped,Classic Cars,214,S10_1949,Autobahn Models,+49 89 555 2201,Marienplatz 3,Munich,80331,Germany,Keller,Markus,Large
+20113,36,190.1,2,6843.6,12-02-2021,91,Shipped,Classic Cars,214,S10_1949,Scotia Replicas,9025556671,98 Barrington St,Halifax,B3J 1Z2,Canada,McLeod,Emily,Large
+20114,29,176.9,8,5130.1,25-02-2021,78,Shipped,Classic Cars,214,S10_1949,Prestige Auto Gifts,6505559033,301 Alpine Way,Palo Alto,94301,USA,Wong,David,Medium
+20115,48,241.8,1,11606.4,09-03-2021,64,Shipped,Classic Cars,214,S10_1949,Grand Prix Collectables,+33 4 7855 6633,22 Avenue Jean Jaures,Lyon,69007,France,Martin,Claire,Large
+20116,22,164.5,6,3619,23-03-2021,50,Shipped,Classic Cars,214,S10_1949,Southern Star Toys,+61 3 9555 4411,140 Collins Street,Melbourne,3000,Australia,Reed,Thomas,Small
+20117,40,198.6,4,7944,06-04-2021,36,Shipped,Classic Cars,214,S10_1949,Vintage Wheels Co.,3125558822,77 Wacker Drive,Chicago,60601,USA,Johnson,Michelle,Large
+20118,31,185.25,9,5742.75,19-04-2021,23,Shipped,Classic Cars,214,S10_1949,Alpine Model Shop,+41 44 555 9988,Bahnhofstrasse 10,Zurich,8001,Switzerland,Meier,Lukas,Medium
+20119,27,159.9,2,4317.3,02-05-2021,10,Shipped,Classic Cars,214,S10_1949,Mediterranean Gifts,+39 06 555 7123,Via del Corso 88,Rome,186,Italy,Rossi,Francesca,Small
+20120,34,210.75,7,7165.5,15-05-2021,3,Shipped,Classic Cars,214,S10_1949,Northern Lights Collectables,+47 22 555 4412,Karl Johans gate 15,Oslo,159,Norway,Hansen,Erik,Medium
